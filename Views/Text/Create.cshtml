@@ -1,0 +1,42 @@
+﻿@model TextValue
+
+
+
+      <form method="post" >
+    <!--
+        <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="Name"  placeholder="Enter Name">
+
+    </div>
+    -->
+    <div class="form-group">
+        <label for="guidtext">Guid Text</label>
+        <textarea class="form-control" id="guidtext" name="GuidText" rows="3"></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="voice">Voice</label>
+        <select class="form-control" id="voice" name="voice">
+            <option selected>Choose The Voice</option>
+            <option value="1">Male Voice</option>
+            <option value="2">Female Voice</option>
+        </select>
+    </div>
+    <br />
+  
+        <div class="form-group">
+         <label for="language">Language</label>
+         <select class="form-control" id="language" name="language">
+             <option selected>Choose The Language</option>
+             <option value="1">Japanese</option>
+             <option value="2">English</option>
+         </select>
+     </div>
+  
+    <br />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+

@@ -1,0 +1,132 @@
+﻿@model TextToImg
+<style>
+    .container1 {
+        display: flex;
+        position:center;
+        overflow: auto; /* Enable scrollbars if content overflows */
+        max-width: 100%; /* Ensure container takes full width */
+        height: 100vh; /* Set height to viewport height */
+        display: flex; /* Use flexbox for layout */
+        align-items: center; /* Center content vertically */
+        justify-content: center; /* Center content horizontally */
+    
+    }
+
+    .container{
+        display: flex;
+        position: center;
+        /*  overflow: auto; Enable scrollbars if content overflows */
+        max-width: 100%; /* Ensure container takes full width */
+        height: 100vh; /* Set height to viewport height */
+        display: flex; /* Use flexbox for layout */
+        align-items: center; /* Center content vertically */
+        justify-content: center; /* Center content horizontally */
+    }
+
+
+    .left-panel {
+        width: 60%;
+        padding: 20px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        display: inline-block;
+        float: left;
+    }
+
+    .right-panel {
+        width: 40%;
+        padding: 20px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        display: inline-block;
+        float: right;
+    }
+
+    img {
+       
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        text-align: center;
+        padding: 20px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        display: inline-block;
+        float: left;
+    }
+</style>
+<div class="container">
+    <div class="left-panel">
+       
+<form method="post">
+    
+
+    <div class="form-group">
+        <label for="inputText">Content Text</label>
+        <textarea class="form-control" id="inputText" name="InputText" rows="3"></textarea>
+    </div>
+    
+  
+    <br />
+    <div class="form-group">
+        <label for="TextSize">Content Text Size</label>
+        <input type="text" class="form-control" id="TextSize" name="TextSize">
+    </div>
+        <br />
+    <div class="form-group">
+        <label for="TextFont">Text Font</label>
+        <select class="form-control" id="TextFont" name="TextFont">
+            <option selected>Choose The Text Font</option>
+            <option value="1">Arial</option>
+            <option value="2">Times New Roman</option>
+            <option value="3">Segoe UI</option>
+        </select>
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="TextColor">Text Font Color</label>
+        <select class="form-control" id="TextColor" name="TextColor">
+            <option selected>Choose The Text Font Color</option>
+            <option value="1">Black</option>
+            <option value="2">Blue</option>
+            <option value="3">Red</option>
+        </select>
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="TextStyle">Text Font Style</label>
+        <select class="form-control" id="TextStyle" name="TextStyle">
+            <option selected>Choose The Text Font Style</option>
+            <option value="1">Regular</option>
+            <option value="2">Bold</option>
+            <option value="3">Italic</option>
+        </select>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-primary">Create Image</button>
+</form>
+    </div>
+    <div class="right-panel">
+        <h2>Display Output Image</h2>
+        
+            @* <img src="~/image/output.jpg" alt="Example Image"> *@
+        @* <img src="@ViewBag.imageSrc" alt="Example Image"> *@
+
+        <div class="container1">
+        @if(ViewBag.imageSrc is null)
+        {
+            <img src="~/image/default.jpg" alt="Example Image">
+
+        }
+        else
+        {
+            <img src="@ViewBag.imageSrc" alt="Example Image">
+            
+        }
+        </div>
+
+       @*  Image name here -> @ViewBag.imageSrc *@
+        
+    </div>
+</div>
+
